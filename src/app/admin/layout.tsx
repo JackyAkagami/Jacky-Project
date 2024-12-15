@@ -1,11 +1,13 @@
 "use client";
+import Loader from "@/components/admin-apnel/Loader";
 import Login from "@/components/admin-apnel/Login";
+import Sidebar from "@/components/admin-apnel/Sidebar";
 import { useAppSelector } from "@/redux/hooks";
 import { useSession } from "next-auth/react";
 import React from "react";
 
-const layout = () => {
-  // eslint-disable-next-line react-hooks/rules-of-hooks, @typescript-eslint/no-unused-vars
+const layout = ({ children }: { children: React.ReactNode }) => {
+  // eslint-disable-next-line react-hooks/rules-of-hooks
   const isLoading = useAppSelector((store) => store.LoadingReducer);
   // eslint-disable-next-line react-hooks/rules-of-hooks
   const { data: session } = useSession();
@@ -14,7 +16,16 @@ const layout = () => {
     return <Login />;
   }
 
-  return <div>layout</div>;
+  return (
+    <div className="flex">
+      <Sidebar />
+      <div className="w-full h-full">
+        {/* <Navbar /> */}
+        <div className="bg-gray-200 p-4 h-[calc(100vh-64px)]">{children}</div>
+      </div>
+      {isLoading && <Loader />}
+    </div>
+  );
 };
 
 export default layout;

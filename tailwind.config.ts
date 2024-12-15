@@ -7,7 +7,14 @@ export default {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        accent : "#0989FF"
+        topHeadingPrimary: "#010f1c"
+        TopHeadingSecondary: "#021d35"
+        Pink: "#FD4B6B"
+      }
+    },
   },
   plugins: [],
 } satisfies Config;
