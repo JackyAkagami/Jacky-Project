@@ -9,11 +9,15 @@ export default {
   theme: {
     extend: {
       colors: {
-        accent : "#0989FF"
-        topHeadingPrimary: "#010f1c"
-        TopHeadingSecondary: "#021d35"
-        Pink: "#FD4B6B"
-      }
+        accent: "#0989FF",
+        topHeadingPrimary: "#010f1c",
+        topHeadingSecondary: "#021d35",
+        pink: "#FD4B6B",
+      },
+      container: {
+        center: true,
+        padding: "15px",
+      },
     },
   },
   plugins: [],
