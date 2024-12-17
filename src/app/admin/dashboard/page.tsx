@@ -1,5 +1,6 @@
 "use client";
-import ProductRow from "@/components/admin-apnel/ProductRow";
+import Popup from "@/components/admin-panel/Popup";
+import ProductRow from "@/components/admin-panel/ProductRow";
 import { setLoading } from "@/redux/features/loadingSlice";
 import { useAppDispatch } from "@/redux/hooks";
 import axios from "axios";
@@ -16,7 +17,6 @@ export interface IProduct {
 
 const Dashboard = () => {
   const [products, setProducts] = useState([]);
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [openPopup, setOpenPopup] = useState(false);
   const [updateTable, setUpdateTable] = useState(false);
 
@@ -62,9 +62,9 @@ const Dashboard = () => {
           </table>
         </div>
       </div>
-      {/* {openPopup && (
+      {openPopup && (
         <Popup setOpenPopup={setOpenPopup} setUpdateTable={setUpdateTable} />
-        )} */}
+      )}
     </div>
   );
 };

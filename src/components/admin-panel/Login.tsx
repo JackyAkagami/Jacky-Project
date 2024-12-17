@@ -9,7 +9,7 @@ const Login = () => {
         onClick={() => signIn("google")}
       >
         <FcGoogle size={30} />{" "}
-      </button>
+      Sign with Google</button>
     </div>
   );
 };
