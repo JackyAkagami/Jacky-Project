@@ -3,23 +3,23 @@ import { Schema, model, models } from "mongoose";
 const productSchema = new Schema({
   imgSrc: {
     type: String,
-    required: true,
+    require: true,
   },
   fileKey: {
     type: String,
-    required: true,
+    require: true,
   },
   name: {
     type: String,
-    required: true,
+    require: true,
   },
-  catagory: {
+  category: {
     type: String,
-    required: true,
+    require: true,
   },
   price: {
     type: String,
-    required: true,
+    require: true,
   },
 });
 

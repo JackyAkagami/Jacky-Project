@@ -34,8 +34,8 @@ const Dashboard = () => {
 
   return (
     <div>
-      <div className="bg-white [h-calc(100vh-96px)] rounded-lg p-4">
-        <h2 className="text-3x1">All Product</h2>
+      <div className="bg-white h-[calc(100vh-96px)] rounded-lg p-4">
+        <h2 className="text-3xl">All Products</h2>
 
         <div className="mt-4 h-[calc(100vh-180px)] overflow-y-auto">
           <table className="w-full">
@@ -52,7 +52,7 @@ const Dashboard = () => {
               {products.map((product: IProduct, index) => (
                 <ProductRow
                   key={product._id}
-                  srNO={index + 1}
+                  srNo={index + 1}
                   setOpenPopup={setOpenPopup}
                   setUpdateTable={setUpdateTable}
                   product={product}
@@ -62,6 +62,7 @@ const Dashboard = () => {
           </table>
         </div>
       </div>
+
       {openPopup && (
         <Popup setOpenPopup={setOpenPopup} setUpdateTable={setUpdateTable} />
       )}

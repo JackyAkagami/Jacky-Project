@@ -16,7 +16,7 @@ interface IPayload {
 }
 
 const ProductForm = () => {
-  const [payLoad, setpayLoad] = useState<IPayload>({
+  const [payload, setPayload] = useState<IPayload>({
     imgSrc: null,
     fileKey: null,
     name: "",
@@ -28,14 +28,15 @@ const ProductForm = () => {
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
+
     dispatch(setLoading(true));
 
     axios
-      .post("/api/add_product", payLoad)
+      .post("/api/add_product", payload)
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
       .then((res) => {
-        console.log(res);
-        makeToast("Product added Succesffully");
-        setpayLoad({
+        makeToast("Product added Successfully");
+        setPayload({
           imgSrc: null,
           fileKey: null,
           name: "",
@@ -51,7 +52,7 @@ const ProductForm = () => {
     <form className="flex flex-col gap-4" onSubmit={handleSubmit}>
       <Image
         className="max-h-[300px] w-auto object-contain rounded-md"
-        src={payLoad.imgSrc ? payLoad.imgSrc : "/placeholder.jpg"}
+        src={payload.imgSrc ? payload.imgSrc : "/placeholder.jpg"}
         width={800}
         height={500}
         alt="product_image"
@@ -62,8 +63,8 @@ const ProductForm = () => {
         onClientUploadComplete={(res) => {
           console.log(res);
 
-          setpayLoad({
-            ...payLoad,
+          setPayload({
+            ...payload,
             imgSrc: res[0]?.url,
             fileKey: res[0]?.key,
           });
@@ -79,35 +80,36 @@ const ProductForm = () => {
         <input
           className="bg-gray-300 w-full px-4 py-2 border outline-pink rounded-md"
           type="text"
-          value={payLoad.name}
-          onChange={(e) => setpayLoad({ ...payLoad, name: e.target.value })}
+          value={payload.name}
+          onChange={(e) => setPayload({ ...payload, name: e.target.value })}
           required
         />
       </div>
+
       <div>
         <label className="block ml-1">Product Category</label>
         <input
           className="bg-gray-300 w-full px-4 py-2 border outline-pink rounded-md"
           type="text"
-          value={payLoad.category}
-          onChange={(e) => setpayLoad({ ...payLoad, category: e.target.value })}
+          value={payload.category}
+          onChange={(e) => setPayload({ ...payload, category: e.target.value })}
           required
         />
       </div>
+
       <div>
-        <label className="block ml-1">Product Price</label>
+        <label className="block ml-1">Product price</label>
         <input
           className="bg-gray-300 w-full px-4 py-2 border outline-pink rounded-md"
           type="text"
-          value={payLoad.price}
-          onChange={(e) => setpayLoad({ ...payLoad, price: e.target.value })}
+          value={payload.price}
+          onChange={(e) => setPayload({ ...payload, price: e.target.value })}
           required
         />
       </div>
+
       <div className="flex justify-end">
-        <button className="bg-green-600 text-white px-8 py-2 rounded-md">
-          Add
-        </button>
+        <button className="bg-pink text-white px-8 py-2 rounded-md">Add</button>
       </div>
     </form>
   );

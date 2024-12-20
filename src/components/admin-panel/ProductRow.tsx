@@ -7,14 +7,16 @@ import { CiEdit } from "react-icons/ci";
 import { RiDeleteBin5Line } from "react-icons/ri";
 
 interface PropsType {
-  srNO: number;
+  srNo: number;
   setOpenPopup: Dispatch<SetStateAction<boolean>>;
   setUpdateTable: Dispatch<SetStateAction<boolean>>;
   product: IProduct;
 }
+
 const ProductRow = ({
-  srNO,
+  srNo,
   setOpenPopup,
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   setUpdateTable,
   product,
 }: PropsType) => {
@@ -26,13 +28,13 @@ const ProductRow = ({
   };
 
   const onDelete = () => {
-    //will do later
+    // will do later
   };
 
   return (
     <tr>
       <td>
-        <div>{srNO}</div>
+        <div>{srNo}</div>
       </td>
       <td>
         <div>{product.name}</div>
@@ -53,7 +55,7 @@ const ProductRow = ({
             onClick={onEdit}
           />
           <RiDeleteBin5Line
-            className="text-[20px] cursor-pointer hover:text-red-600"
+            className="text=[20px] cursor-pointer hover:text-red-600"
             onClick={onDelete}
           />
         </div>

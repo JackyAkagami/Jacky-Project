@@ -22,7 +22,7 @@ export async function PUT(request: NextRequest, URLParams: any) {
     return NextResponse.json(
       {
         error,
-        msg: "Something went wrong",
+        msg: "Something Went Wrong",
       },
       { status: 400 }
     );

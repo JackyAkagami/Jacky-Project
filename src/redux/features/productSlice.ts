@@ -14,7 +14,7 @@ export const productSlice = createSlice({
   name: "productSlice",
   initialState,
   reducers: {
-    setProduct: (_state, action: PayloadAction<IProduct>) => {
+    setProduct: (state, action: PayloadAction<IProduct>) => {
       return action.payload;
     },
   },

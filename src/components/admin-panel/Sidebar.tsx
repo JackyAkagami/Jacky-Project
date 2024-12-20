@@ -24,7 +24,7 @@ const menus = [
     href: "#",
   },
   {
-    title: "Transactions",
+    title: "Transaction",
     icon: <GrTransaction />,
     href: "#",
   },
@@ -34,7 +34,7 @@ const menus = [
     href: "#",
   },
   {
-    title: "Settings",
+    title: "Setting",
     icon: <IoSettings />,
     href: "#",
   },
@@ -43,10 +43,11 @@ const menus = [
 const Sidebar = () => {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const pathName = usePathname();
+
   return (
     <div className="bg-white w-[300px] min-h-screen p-4 shrink-0">
       <div className="flex items-center gap-4">
-        <img className="size-12 rounded-lg" src="/logo.jpg" alt="logo" />
+        <img className="size-12 rounded-lg " src="/logo.jpg" alt="logo" />
         <h2 className="text-[20px] font-semibold">Jack Store</h2>
       </div>
 
@@ -56,7 +57,7 @@ const Sidebar = () => {
             key={menu.title}
             href={menu.href}
             className={
-              ' bg-gray-300 flex gap-2 items-center p-4 rounded-lg cursor-pointer hover:bg-pink hover:text-white ${pathName === menu.href ? "bg-pink text-white": "bg-gray-200"}'
+              'bg-gray-400 flex gap-2 items-center p-4 rounded-lg cursor-pointer hover:bg-pink hover:text-white ${pathName === menu.href ? "bg-pink text-white": "bg-gray-200"}'
             }
           >
             <div className="text-[20px]">{menu.icon}</div>

@@ -13,7 +13,7 @@ export async function GET() {
     return NextResponse.json(
       {
         error,
-        msg: "Something went wrong",
+        msg: "Something Went Wrong",
       },
       { status: 400 }
     );
