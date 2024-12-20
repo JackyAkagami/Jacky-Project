@@ -15,7 +15,6 @@ interface PropsType {
 const ProductRow = ({
   srNO,
   setOpenPopup,
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   setUpdateTable,
   product,
 }: PropsType) => {

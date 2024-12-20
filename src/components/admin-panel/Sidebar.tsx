@@ -56,7 +56,7 @@ const Sidebar = () => {
             key={menu.title}
             href={menu.href}
             className={
-              'flex gap-2 items-center p-4 rounded-lg cursor-pointer hover:bg-pink hover:text-white ${pathName === menu.href ? "bg-pink text-white": "bg-gray-200"}'
+              ' bg-gray-300 flex gap-2 items-center p-4 rounded-lg cursor-pointer hover:bg-pink hover:text-white ${pathName === menu.href ? "bg-pink text-white": "bg-gray-200"}'
             }
           >
             <div className="text-[20px]">{menu.icon}</div>
