@@ -2,7 +2,7 @@ const Banner = () => {
   return (
     <div className="container mt-32">
       <div className="grid lg:grid-cols-[66%, 34%] gap-4 pr-[15px]">
-        <div className="h-[200px] md:h-[260px] bg-[url(/product-banner-1.jpg)] bg-cover bg-center rounded-x1 p-8 md:p-16">
+        <div className="h-[200px] md:h-[260px] bg-[url(/product-banner-1.PNG)] bg-cover bg-center rounded-x1 p-8 md:p-16">
           <p className="text-topHeadingSecondary text-xl font-medium">
             Sale 20% off all store
           </p>
@@ -16,7 +16,7 @@ const Banner = () => {
             Shop Now
           </a>
         </div>
-        <div className="h-[260px] bg-[url(/product-banner-2.jpg)] bg-right rounded-xl hidden lg:block"></div>
+        <div className="h-[260px] bg-[url(/product-banner-2.PNG)] bg-right rounded-xl hidden lg:block"></div>
       </div>
     </div>
   );
