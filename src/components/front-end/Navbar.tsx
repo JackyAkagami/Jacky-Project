@@ -1,5 +1,6 @@
 import { useAppSelector } from "@/redux/hooks";
 import React, { Dispatch, SetStateAction } from "react";
+import { AiOutlineShop, AiOutlineUser } from "react-icons/ai";
 import { BsSearch } from "react-icons/bs";
 
 interface PropsType {
@@ -25,7 +26,35 @@ const Navbar = ({ setShowCart }: PropsType) => {
               <BsSearch />
             </div>
           </div>
+
+          <div className="flex gap-4 md:gap-8 items-center">
+            <div className="md:flex hidden gap-3">
+              <div className="rounded-full border-2 border-gray-300 text-gray-500 text-[32px] w-[50px] h-[50px] grid place-items-center">
+                <AiOutlineUser />
+              </div>
+
+              <div>
+                <p className="text-gray-500">Hello, Sign in</p>
+                <p className="font-medium">Your Account</p>
+              </div>
+            </div>
+
+            <div
+              className="text-gray-500 text-[32px] relative cursor-pointer"
+              onClick={() => setShowCart(true)}
+            >
+              <AiOutlineShop />
+              <div
+                className="absolute top-[-15px] right-[-10px] bg-red-600 w-[25px] h-[25px]
+                rounded-full text-white text-[14px] grid place-items-center"
+              >
+                {cartCount}
+              </div>
+            </div>
+          </div>
         </div>
+
+        <div className="border-b border-gray-300 pt-4"></div>
       </div>
     </div>
   );
