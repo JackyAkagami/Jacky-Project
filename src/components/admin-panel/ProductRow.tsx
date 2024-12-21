@@ -1,6 +1,9 @@
 import { IProduct } from "@/app/admin/dashboard/page";
+import { setLoading } from "@/redux/features/loadingSlice";
 import { setProduct } from "@/redux/features/productSlice";
 import { useAppDispatch } from "@/redux/hooks";
+import { makeToast } from "@/utils/helper";
+import axios from "axios";
 import Image from "next/image";
 import { Dispatch, SetStateAction } from "react";
 import { CiEdit } from "react-icons/ci";
@@ -16,7 +19,6 @@ interface PropsType {
 const ProductRow = ({
   srNo,
   setOpenPopup,
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   setUpdateTable,
   product,
 }: PropsType) => {
@@ -28,7 +30,28 @@ const ProductRow = ({
   };
 
   const onDelete = () => {
-    // will do later
+    dispatch(setLoading(true));
+
+    const payload = {
+      fileKey: product.fileKey,
+    };
+
+    axios
+      .delete("/api/uploadthing", { data: payload })
+      .then((res) => {
+        console.log(res.data);
+
+        axios
+          .delete(`/api/delete_product/${product._id}`)
+          .then((res) => {
+            console.log(res.data);
+            makeToast("Product Delete Successfully");
+            setUpdateTable((prevState) => !prevState);
+          })
+          .catch((error) => console.log(error))
+          .finally(() => dispatch(setLoading(false)));
+      })
+      .catch((error) => console.log(error));
   };
 
   return (
